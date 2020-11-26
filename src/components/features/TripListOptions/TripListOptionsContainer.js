@@ -6,8 +6,7 @@ import {
   changeSearchPhrase, 
   addTag, 
   removeTag,
-  changeFromDuration,
-  changeToDuration,
+  changeDuration,
 } from '../../../redux/filtersRedux';
 
 const mapStateToProps = state => ({
@@ -20,8 +19,7 @@ const mapDispatchToProps = dispatch => ({
   // TODO - add more dispatchers for other filters
   addTag: tags => dispatch(addTag(tags)),
   removeTag: tags => dispatch(removeTag(tags)),
-  changeFromDuration: value => dispatch(changeFromDuration(value)),
-  changeToDuration: value => dispatch(changeToDuration(value)),
+  changeDuration: (type, value) => dispatch(changeDuration({type, value})),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TripListOptions);
