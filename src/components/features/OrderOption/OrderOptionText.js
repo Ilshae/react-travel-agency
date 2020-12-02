@@ -15,7 +15,7 @@ const OrderOptionText = ({ currentValue, setOptionValue }) => (
 
 OrderOptionText.propTypes = {
   setOptionValue: PropTypes.func,
-  currentValue: PropTypes.text,
+  currentValue: PropTypes.string,
 };
 
 export default OrderOptionText;
