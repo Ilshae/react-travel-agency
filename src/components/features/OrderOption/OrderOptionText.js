@@ -3,7 +3,7 @@ import styles from './OrderOption.scss';
 import PropTypes from 'prop-types';
 
 const OrderOptionText = ({ currentValue, setOptionValue }) => (
-  <div className={styles.number}>
+  <div className={styles.text}>
     <input
       type="text"
       className={styles.input}
