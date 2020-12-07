@@ -13,7 +13,7 @@ describe('Component TripSummary', () => {
 
   it('should render correct src and alt for image', () => {
     const expectedSrc = 'image.jpg';
-    const expectedAlt = 'photo';
+    const expectedAlt = 'alt';
     const expectedTags=['title', 'hello', 'text'];
     const component = shallow(<TripSummary tags={expectedTags} image={expectedSrc} name={expectedAlt}/>);
   
