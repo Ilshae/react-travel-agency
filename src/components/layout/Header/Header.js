@@ -24,6 +24,7 @@ class Header extends React.Component {
                 <NavLink to='/countries' activeClassName='active'>Countries</NavLink>
                 <NavLink to='/regions' activeClassName='active'>Regions</NavLink>
                 <NavLink to='/info' activeClassName='active'>Contact</NavLink>
+                <NavLink to='/trip/5cc1d1014c75f672e46ef6d7' activeClassName='active'>Test</NavLink>
               </nav>
             </Col>
             <Col md={3} lg={2}>
