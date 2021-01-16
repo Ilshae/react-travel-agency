@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://ilshae.github.io/travel-agency/",
   "scripts": {
     "start": "npm-run-all -p server:*",
     "server:api": "node server.js",

@@ -47,13 +47,13 @@ class App extends React.Component {
           <Switch>
             <ErrorBoundary>
               <Suspense fallback={<Spinner />}>
-                <Route exact path='/travel-agency/' component={Home} />
-                <Route exact path='/travel-agency/trips' component={Trips} />
-                <Route exact path='/travel-agency/trips/:id' component={Trip} />
-                <Route exact path='/travel-agency/countries' component={Countries} />
-                <Route exact path='/travel-agency/country/:id' component={Country} />
-                <Route exact path='/travel-agency/regions' component={Regions} />
-                <Route exact path='/travel-agency/info' component={Info} />
+                <Route exact path='/' component={Home} />
+                <Route exact path='/trips' component={Trips} />
+                <Route exact path='/trips/:id' component={Trip} />
+                <Route exact path='/countries' component={Countries} />
+                <Route exact path='/country/:id' component={Country} />
+                <Route exact path='/regions' component={Regions} />
+                <Route exact path='/info' component={Info} />
               </Suspense>
             </ErrorBoundary>
           </Switch>
