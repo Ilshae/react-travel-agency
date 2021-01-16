@@ -39,8 +39,6 @@ const sendOrder = (options, tripCost, tripName, tripId, tripCountry) => {
     fetch(url, fetchOptions)
       .then(function(response){
         return response.json();
-      }).then(function(parsedResponse){
-        console.log('parsedResponse', parsedResponse);
       });
   }
 };
