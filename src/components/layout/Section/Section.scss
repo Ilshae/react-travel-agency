@@ -3,11 +3,20 @@
 .component {
   padding: ($base-size * 4) 0;
   width: 100%;
+  animation: fadein 0.2s;
   &.centered {
     padding: 0;
     width: auto;
   }
   &.has-hero {
     padding: 0;
+  }
+}
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
   }
 }

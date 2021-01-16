@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://ilshae.github.io/travel-agency/",
   "scripts": {
     "start": "npm-run-all -p server:*",
     "server:api": "node server.js",
@@ -45,7 +46,6 @@
     "react-html-parser": "^2.0.2",
     "react-redux": "^7.0.1",
     "react-router-dom": "^5.0.0",
-    "react-router-transition": "^1.3.0",
     "redux": "^4.0.1",
     "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",

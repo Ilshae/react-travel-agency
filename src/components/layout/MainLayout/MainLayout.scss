@@ -1,0 +1,7 @@
+@import '../../../styles/settings.scss';
+
+.component {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: ($base-size * 4);
+}

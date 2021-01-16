@@ -1,24 +1,24 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import {connect} from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import MainLayout from './components/layout/MainLayout/MainLayout';
-
-import Home from './components/views/Home/Home';
-import Trips from './components/views/Trips/TripsContainer';
-import Trip from './components/views/Trip/TripContainer';
-import Countries from './components/views/Countries/CountriesContainer';
-import Country from './components/views/Country/CountryContainer';
-import Regions from './components/views/Regions/RegionsContainer';
-import Info from './components/views/Info/Info';
-import NotFound from './components/views/NotFound/NotFound';
+import Spinner from './components/views/Spinner/Spinner';
+import ErrorBoundary from './components/views/ErrorBoundary/ErrorBoundary';
 
 import parseTrips from './utils/parseTrips';
 import {setMultipleStates} from './redux/globalRedux';
+import ScrollToTop from './utils/scrollToTop';
 
-import { AnimatedSwitch } from 'react-router-transition';
-import styles from './styles/App.scss';
+const Home = lazy(() => import( './components/views/Home/Home' ));
+const Trips = lazy(() => import( './components/views/Trips/TripsContainer' ));
+const Trip = lazy(() => import( './components/views/Trip/TripContainer' ));
+const Countries = lazy(() => import( './components/views/Countries/CountriesContainer' ));
+const Country = lazy(() => import( './components/views/Country/CountryContainer' ));
+const Regions = lazy(() => import( './components/views/Regions/RegionsContainer' ));
+const Info = lazy(() => import( './components/views/Info/Info' ));
+
 
 class App extends React.Component {
   static propTypes = {
@@ -42,23 +42,21 @@ class App extends React.Component {
   render(){
     return (
       <BrowserRouter>
+        <ScrollToTop />
         <MainLayout>
-          <AnimatedSwitch
-            atEnter={{ opacity: 0 }}
-            atLeave={{ opacity: 0 }}
-            atActive={{ opacity: 1 }}
-            className={styles.switchWrapper}
-            location={location}
-          >
-            <Route exact path='/' component={Home} />
-            <Route exact path='/trips' component={Trips} />
-            <Route exact path='/trip/:id' component={Trip} />
-            <Route exact path='/countries' component={Countries} />
-            <Route exact path='/country/:id' component={Country} />
-            <Route exact path='/regions' component={Regions} />
-            <Route exact path='/info' component={Info} />
-            <Route path='*' component={NotFound} />
-          </AnimatedSwitch>
+          <Switch>
+            <ErrorBoundary>
+              <Suspense fallback={<Spinner />}>
+                <Route exact path='/travel-agency/' component={Home} />
+                <Route exact path='/travel-agency/trips' component={Trips} />
+                <Route exact path='/travel-agency/trips/:id' component={Trip} />
+                <Route exact path='/travel-agency/countries' component={Countries} />
+                <Route exact path='/travel-agency/country/:id' component={Country} />
+                <Route exact path='/travel-agency/regions' component={Regions} />
+                <Route exact path='/travel-agency/info' component={Info} />
+              </Suspense>
+            </ErrorBoundary>
+          </Switch>
         </MainLayout>
       </BrowserRouter>
     );
