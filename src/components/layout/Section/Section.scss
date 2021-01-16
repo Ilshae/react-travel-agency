@@ -9,7 +9,7 @@
     width: auto;
   }
   &.has-hero {
-    padding: 0;
+    padding: 0 0 ($base-size * 2) 0;
   }
 }
 @keyframes fadein {
