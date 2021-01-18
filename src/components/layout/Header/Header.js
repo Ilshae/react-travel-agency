@@ -14,7 +14,7 @@ class Header extends React.Component {
               <Link to='/'>
                 <div className={styles.logo}>
                   <Icon name='compass' />
-                  <span className={styles.name}>Hermes Travel Agency</span>
+                  <span className={styles.name}>Hermes</span>
                 </div>
               </Link>
             </Col>

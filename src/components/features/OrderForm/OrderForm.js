@@ -39,6 +39,9 @@ const sendOrder = (options, tripCost, tripName, tripId, tripCountry) => {
     fetch(url, fetchOptions)
       .then(function(response){
         return response.json();
+      }).then(function(){
+        alert('Thank you for choosing Hermes. Your order is accepted')
+        /*console.log('parsedResponse', parsedResponse)*/;
       });
   }
 };

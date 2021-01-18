@@ -19,7 +19,6 @@ const Country = lazy(() => import( './components/views/Country/CountryContainer'
 const Regions = lazy(() => import( './components/views/Regions/RegionsContainer' ));
 const Info = lazy(() => import( './components/views/Info/Info' ));
 
-
 class App extends React.Component {
   static propTypes = {
     trips: PropTypes.array,
